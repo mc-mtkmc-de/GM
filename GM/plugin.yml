@@ -1,0 +1,14 @@
+name: GM
+version: 0.1
+author: Tempoo50
+main: de.gamemode.main.GM
+
+commands:
+   gm0:
+      description:
+   gm1:
+      description:
+   gm2:
+      description:
+   gm3:
+      description:
