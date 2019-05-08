@@ -1,5 +1,6 @@
 package de.gamemode.commands;
 
+import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -21,8 +22,20 @@ public class GmSurvivalCommand implements CommandExecutor{
 					
 					player.sendMessage("ßcDu befindest dich jetzt im ßbßl‹berlebensmodusßc!");
 					
-				} else
-					player.sendMessage("ßcBitte benutze ß6/gm0 ßc!");
+				}else if(player.hasPermission("gm.gm0.other")) {
+					if(args.length == 1) {
+						Player target = Bukkit.getPlayer(args[0]);
+						if(target != null) {
+							
+							target.setGameMode(GameMode.CREATIVE);
+							target.sendMessage("ßcDu wurdest in den ßbßl‹berlebensmodus ßcgesetzt!");
+							player.sendMessage("ßcDu hast den Spieler ß6" + target.getName() + " in den ßbßl‹berlebensmodus ßcgesetzt!");
+						}else
+							player.sendMessage("ßcDer Spieler ß6" + args[0] + "ßc ist nicht auf dem Server.");
+					}
+				}
+					
+				 
 			} else
 				player.sendMessage("ßcDazu hast du keine Rechte!");
 		}
@@ -30,5 +43,5 @@ public class GmSurvivalCommand implements CommandExecutor{
 		return false;
 	}
 
-
 }
+
