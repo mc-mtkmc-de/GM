@@ -27,7 +27,7 @@ public class GmSurvivalCommand implements CommandExecutor{
 						Player target = Bukkit.getPlayer(args[0]);
 						if(target != null) {
 							
-							target.setGameMode(GameMode.CREATIVE);
+							target.setGameMode(GameMode.SURVIVAL);
 							target.sendMessage("ßcDu wurdest in den ßbßl‹berlebensmodus ßcgesetzt!");
 							player.sendMessage("ßcDu hast den Spieler ß6" + target.getName() + " in den ßbßl‹berlebensmodus ßcgesetzt!");
 						}else
